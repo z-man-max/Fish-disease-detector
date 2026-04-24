@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish Health Test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>🐟 Fish Health Scanner</h1>
+
+    <div class="card">
+      <h2>1. Upload Fish Photo</h2>
+      <input
+        type="file"
+        id="fileInput"
+        accept="image/*"
+        capture="environment"
+      />
+      <button onclick="document.getElementById('fileInput').click()">
+        📷 Capture/Upload Photo
+      </button>
+
+      <img id="preview" alt="Fish preview" />
+
+      <div class="loading" id="loading">
+        <div class="loader"></div>
+        <p>Analyzing with AI...</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. Analyze</h2>
+      <button id="analyzeBtn" onclick="analyzeFish()" disabled>
+        🔍 Analyze Fish Health
+      </button>
+      <p>
+        <small>Backend: <span id="backendStatus">Checking...</span></small>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>3. Results</h2>
+      <div class="result" id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

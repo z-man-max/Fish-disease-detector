@@ -164,4 +164,5 @@ if __name__ == '__main__':
     print("🔗 Backend URL: http://localhost:5000")
     print("📁 Uploads folder: backend/uploads/")
     print("🎯 Supported classes: Healthy, Ich (White Spot), Black Spot")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)

@@ -1,0 +1,13 @@
+# render.yaml - Configuration for Render
+services:
+  - type: web
+    name: fish-disease-detector
+    runtime: python
+    repo: https://github.com/z-man-max/fish-detector
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: gunicorn app:app
+    healthCheckPath: /api/health
